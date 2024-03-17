@@ -18,7 +18,6 @@ def getAllStudents(table):
 
 # Create
 def addStudent(connection, cursor):
-
     """
     Inserts a new student record into the 'students' table.
     """
@@ -36,7 +35,7 @@ def addStudent(connection, cursor):
         print(f"Successfully created new student: {first_name} {last_name}\n")
 
     except Exception as added_failed:
-        print("failed to create student: " + str(added_failed))
+        print("ERROR! Failed to create new student: " + str(added_failed))
 
 
 # Update
@@ -64,12 +63,11 @@ def updateStudentEmail(connection, cursor):
             print(f"Successfully updated student with ID: {student_id}\n")
 
     except Exception as update_failed:
-        print("failed to update student: " + str(update_failed))
+        print("ERROR! Failed to update student: " + str(update_failed))
 
 
 # Delete
 def deleteStudent(connection, cursor):
-
     """
     Deletes the record of the student with the specified student_id.
     """
@@ -82,13 +80,13 @@ def deleteStudent(connection, cursor):
         connection.commit()
 
         if cursor.statusmessage.split()[1] == "0":
-            print(f"Failed to find student with ID {student_id}\n")
+            print(f"Failed to find student with ID: {student_id}\n")
 
         else:
-            print(f"Successfully deleted student with ID {student_id}\n")
+            print(f"Successfully deleted student with ID: {student_id}\n")
 
     except Exception as deleted_failed:
-        print("failed to delete student: " + str(deleted_failed))
+        print("ERROR! Failed to delete student: " + str(deleted_failed))
 
 
 def main():
@@ -114,19 +112,19 @@ def main():
                 result = input("> ")
                 result_lower = result.lower()
 
-                if result_lower == '1':
+                if result_lower == "1":
                     getAllStudents(cursor)
 
-                elif result_lower == '2':
+                elif result_lower == "2":
                     addStudent(connection, cursor)
 
-                elif result_lower == '3':
+                elif result_lower == "3":
                     updateStudentEmail(connection, cursor)
 
-                elif result_lower == '4':
+                elif result_lower == "4":
                     deleteStudent(connection, cursor)
 
-                elif result_lower in ['q', 'quit']:
+                elif result_lower in ["q", "quit"]:
                     break
 
                 else:
