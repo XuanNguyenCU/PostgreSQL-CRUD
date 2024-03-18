@@ -1,4 +1,4 @@
-# PostGreSQL-CRUD
+# PostgreSQL-CRUD
 An application in Python that connects to the PostgreSQL database to perform specific CRUD (Create, Read, Update, Delete) operations.
 
 ### Prerequisites
