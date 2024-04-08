@@ -18,6 +18,3 @@ These commands create a "students" table and populate the table with initial sam
 ### Compilation
 You can run the Python program using your IDE or use the terminal:
 ```python CRUD-operations.py```
-
-### Demo
-Youtube Link: https://youtu.be/oOTZniAhZu4
